@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Praneeth</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  .card {
+    background: rgba(0, 0, 0, 0.45);
+    padding: 40px;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 20px;
+    animation: fadeIn 3s ease;
+    box-shadow: 0 0 30px rgba(255,255,255,0.15);
+  }
+
+  h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+
+  .name {
+    font-size: 2.2em;
+    color: #ffd1dc;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .from {
+    font-style: italic;
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #fce1e4;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Floating hearts */
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: pink;
+    transform: rotate(45deg);
+    animation: float 8s infinite ease-in;
+    opacity: 0.6;
+  }
+
+  .heart::before,
+  .heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: pink;
+    border-radius: 50%;
+  }
+
+  .heart::before {
+    top: -10px;
+    left: 0;
+  }
+
+  .heart::after {
+    left: -10px;
+    top: 0;
+  }
+
+  @keyframes float {
+    0% {
+      bottom: -10%;
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      bottom: 110%;
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+  <h1>Happy Birthday</h1>
+  <div class="name">Praneeth 💖</div>
+
+  <p>
+    On this beautiful day, I just want you to know  
+    how special you are and how deeply you are appreciated.  
+    May your life be filled with peace, happiness,  
+    and countless moments worth smiling for.
+  </p>
+
+  <p>
+    May this year bring you closer to your dreams  
+    and wrap you in warmth, love, and success.
+  </p>
+
+  <div class="from">
+    — your well wisher Dhiru 🌸
+  </div>
+</div>
+
+<!-- Floating hearts -->
+<script>
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 10000);
+  }
+
+  setInterval(createHeart, 600);
+</script>
+
+</body>
+</html>
